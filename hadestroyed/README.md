@@ -1,6 +1,6 @@
-# help README
+# hadestroyed README
 
-This is the README for your extension "help". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "hadestroyed". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
