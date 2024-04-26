@@ -23,7 +23,7 @@ try {
                     let cursorPos = ((i * 200) + j) * 6;
                     const stuff = toWrite.slice(cursorPos, cursorPos + 6);
                     context.fillStyle = "#" + stuff;
-                    if (i === 1 && j === 0) {
+                    if (i === 2 && j === 0) {
                         debug.textContent = stuff;
                     }
                     context.fillRect(i, j * (3 / 2), 1, 1);
