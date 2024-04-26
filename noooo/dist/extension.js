@@ -73,7 +73,7 @@ function getWebviewContent(code, noncode, spreadSheet) {
   </head>
   <body>
   	  <h1 id="debug"></h1>
-	  <canvas id="canvas" />
+	  <canvas id="canvas" width="640" height="260" />
 	  <script id="code" src=${code} url=${noncode} />
   </body>
   </html>`;
