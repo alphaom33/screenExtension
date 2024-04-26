@@ -18,8 +18,9 @@ export function activate(context: vscode.ExtensionContext) {
 			}
 		  );
 		  const code = currentPanel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, 'src', 'help.js'));
+		  const otherThingy = currentPanel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, 'src', 'help.css'));
 		  const thingy = currentPanel.webview.asWebviewUri(vscode.Uri.joinPath(context.extensionUri, 'data', 'yes.txt'));
-		  currentPanel.webview.html = getWebviewContent(code, thingy);
+		  currentPanel.webview.html = getWebviewContent(code, thingy, otherThingy);
 		  currentPanel.onDidDispose(
 			() => {
 			  currentPanel = undefined;
@@ -47,16 +48,17 @@ export function activate(context: vscode.ExtensionContext) {
 	);
   }
   
-  function getWebviewContent(code: vscode.Uri, noncode: vscode.Uri) {
+  function getWebviewContent(code: vscode.Uri, noncode: vscode.Uri, spreadSheet: vscode.Uri) {
 	return `<!DOCTYPE html>
   <html lang="en">
   <head>
 	  <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <title>Cat Coding</title>
+	  <link rel="stylesheet" href=${spreadSheet}>
   </head>
   <body>
-  	  <h1 id="debug">j</h1>
+  	  <h1 id="debug"></h1>
 	  <canvas id="canvas" />
 	  <script id="code" src=${code} url=${noncode} />
   </body>
